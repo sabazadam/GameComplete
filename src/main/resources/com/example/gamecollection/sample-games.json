@@ -1,0 +1,72 @@
+[
+  {
+    "title": "The Witcher 3: Wild Hunt",
+    "developer": "CD Projekt Red",
+    "publisher": "CD Projekt",
+    "genres": ["RPG", "Action", "Open World"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+    "translators": ["QLOC"],
+    "steamId": "292030",
+    "releaseYear": 2015,
+    "playtime": 100.5,
+    "format": "Digital",
+    "language": "English",
+    "rating": 9.5,
+    "tags": ["Fantasy", "Open World", "RPG", "Mature"]
+  },
+  {
+    "title": "Stardew Valley",
+    "developer": "ConcernedApe",
+    "publisher": "ConcernedApe",
+    "genres": ["Simulation", "RPG", "Indie"],
+    "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch", "Mobile"],
+    "steamId": "413150",
+    "releaseYear": 2016,
+    "playtime": 85.2,
+    "format": "Digital",
+    "language": "English",
+    "rating": 9.0,
+    "tags": ["Farming", "Life Sim", "Relaxing", "Pixel Art"]
+  },
+  {
+    "title": "Hades",
+    "developer": "Supergiant Games",
+    "publisher": "Supergiant Games",
+    "genres": ["Action", "Roguelike", "Indie"],
+    "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+    "steamId": "1145360",
+    "releaseYear": 2020,
+    "playtime": 60.0,
+    "format": "Digital",
+    "language": "English",
+    "rating": 9.7,
+    "tags": ["Roguelike", "Action", "Mythology", "Great Soundtrack"]
+  },
+  {
+    "title": "Minecraft",
+    "developer": "Mojang Studios",
+    "publisher": "Mojang Studios",
+    "genres": ["Sandbox", "Survival", "Adventure"],
+    "platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Mobile"],
+    "releaseYear": 2011,
+    "playtime": 300.5,
+    "format": "Digital",
+    "language": "English",
+    "rating": 9.3,
+    "tags": ["Sandbox", "Building", "Creative", "Multiplayer"]
+  },
+  {
+    "title": "Cyberpunk 2077",
+    "developer": "CD Projekt Red",
+    "publisher": "CD Projekt",
+    "genres": ["RPG", "Action", "Open World"],
+    "platforms": ["PC", "PlayStation", "Xbox"],
+    "steamId": "1091500",
+    "releaseYear": 2020,
+    "playtime": 75.8,
+    "format": "Digital",
+    "language": "English",
+    "rating": 7.5,
+    "tags": ["Sci-Fi", "Open World", "RPG", "Futuristic"]
+  }
+]
