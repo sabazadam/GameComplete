@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.gamecollection.controller.HelpController"
+            prefWidth="800" prefHeight="600">
+    <center>
+        <WebView fx:id="webView" VBox.vgrow="ALWAYS"/>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Close" onAction="#handleClose" prefWidth="80"/>
+        </HBox>
+    </bottom>
+</BorderPane>

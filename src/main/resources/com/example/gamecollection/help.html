@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Collection Help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 800px;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #444;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .tip {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Collection Manager - Help Guide</h1>
+    
+    <div class="section">
+        <h2>Getting Started</h2>
+        <p>Game Collection Manager is a tool for maintaining a catalog of your video games. You can add, edit, and delete games in your collection, as well as search and filter them based on various criteria.</p>
+    </div>
+    
+    <div class="section">
+        <h2>Managing Your Collection</h2>
+        
+        <h3>Adding a Game</h3>
+        <p>To add a new game to your collection:</p>
+        <ol>
+            <li>Click the "Add Game" button in the toolbar, or select "Add Game..." from the Edit menu.</li>
+            <li>Fill in the game details in the form. Fields marked with (*) are required.</li>
+            <li>For list fields (genres, platforms, tags), enter values separated by commas.</li>
+            <li>Click "Save" to add the game to your collection.</li>
+        </ol>
+        
+        <h3>Editing a Game</h3>
+        <p>To edit a game in your collection:</p>
+        <ol>
+            <li>Select the game in the table.</li>
+            <li>Right-click and select "Edit Game", or select "Edit Selected Game..." from the Edit menu.</li>
+            <li>Modify the game details in the form.</li>
+            <li>Click "Save" to update the game in your collection.</li>
+        </ol>
+        
+        <h3>Deleting a Game</h3>
+        <p>To delete a game from your collection:</p>
+        <ol>
+            <li>Select the game in the table.</li>
+            <li>Right-click and select "Delete Game", or select "Delete Selected Game..." from the Edit menu.</li>
+            <li>Confirm the deletion when prompted.</li>
+        </ol>
+    </div>
+    
+    <div class="section">
+        <h2>Searching and Filtering</h2>
+        <p>You can search for games in your collection by entering a search term in the search box and clicking the "Search" button. The search will look for matches in all fields of the games.</p>
+        
+        <p>To clear the search and see all games again, clear the search box and click "Search".</p>
+        
+        <div class="tip">
+            <strong>Tip:</strong> You can search for games by any field, including title, developer, publisher, release year, tags, and more.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Importing and Exporting</h2>
+        
+        <h3>Importing Games</h3>
+        <p>To import games from a JSON file:</p>
+        <ol>
+            <li>Click the "Import" button in the toolbar, or select "Import..." from the File menu.</li>
+            <li>Select a JSON file containing game data.</li>
+            <li>The games will be imported into your collection.</li>
+        </ol>
+        
+        <h3>Exporting Games</h3>
+        <p>To export your collection to a JSON file:</p>
+        <ol>
+            <li>Click the "Export" button in the toolbar, or select "Export..." from the File menu.</li>
+            <li>Choose a location and name for the JSON file.</li>
+            <li>Your entire collection will be exported to the file.</li>
+        </ol>
+    </div>
+    
+    <div class="section">
+        <h2>JSON File Format</h2>
+        <p>The application uses JSON files to store game data. Each game is represented as a JSON object with the following fields:</p>
+        <pre><code>[
+  {
+    "title": "Game Title",
+    "developer": "Developer Name",
+    "publisher": "Publisher Name",
+    "genres": ["Genre1", "Genre2"],
+    "platforms": ["Platform1", "Platform2"],
+    "translators": ["Translator1"],
+    "steamId": "12345",
+    "releaseYear": 2023,
+    "playtime": 10.5,
+    "format": "Digital",
+    "language": "English",
+    "rating": 9.5,
+    "tags": ["Tag1", "Tag2"],
+    "coverImagePath": "/path/to/cover.jpg"
+  }
+]</code></pre>
+    </div>
+    
+    <div class="section">
+        <h2>Keyboard Shortcuts</h2>
+        <ul>
+            <li><code>Ctrl+N</code>: Add a new game</li>
+            <li><code>Delete</code>: Delete the selected game</li>
+            <li><code>Ctrl+F</code>: Focus the search box</li>
+            <li><code>Ctrl+O</code>: Import games</li>
+            <li><code>Ctrl+S</code>: Export games</li>
+            <li><code>Ctrl+H</code>: Open help contents</li>
+            <li><code>Arrow keys</code>: Navigate in the game list</li>
+            <li><code>Enter</code>: Select the highlighted game</li>
+        </ul>
+    </div>
+</body>
+</html>

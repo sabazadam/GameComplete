@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.gamecollection.controller.GameFormController"
+          hgap="10" vgap="10" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title Row -->
+    <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1" 
+               GridPane.hgrow="ALWAYS" GridPane.columnSpan="3"/>
+
+    <!-- Developer Row -->
+    <Label text="Developer:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="developerField" GridPane.rowIndex="1" GridPane.columnIndex="1" 
+               GridPane.hgrow="ALWAYS" GridPane.columnSpan="3"/>
+
+    <!-- Publisher Row -->
+    <Label text="Publisher:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="publisherField" GridPane.rowIndex="2" GridPane.columnIndex="1" 
+               GridPane.hgrow="ALWAYS" GridPane.columnSpan="3"/>
+
+    <!-- Genres Row -->
+    <Label text="Genres:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="genresField" GridPane.rowIndex="3" GridPane.columnIndex="1" 
+               GridPane.hgrow="ALWAYS" GridPane.columnSpan="3"
+               promptText="Action, RPG, Puzzle, etc. (comma separated)"/>
+
+    <!-- Platforms Row -->
+    <Label text="Platforms:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="platformsField" GridPane.rowIndex="4" GridPane.columnIndex="1" 
+               GridPane.hgrow="ALWAYS" GridPane.columnSpan="3"
+               promptText="PC, PlayStation, Xbox, etc. (comma separated)"/>
+
+    <!-- Translators Row -->
+    <Label text="Translators:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="translatorsField" GridPane.rowIndex="5" GridPane.columnIndex="1" 
+               GridPane.hgrow="ALWAYS" GridPane.columnSpan="3"
+               promptText="Translation studios (comma separated)"/>
+
+    <!-- Steam ID Row -->
+    <Label text="Steam ID:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="steamIdField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <!-- Release Year Row -->
+    <Label text="Release Year:" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+    <TextField fx:id="releaseYearField" GridPane.rowIndex="6" GridPane.columnIndex="3"/>
+
+    <!-- Playtime Row -->
+    <Label text="Playtime:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <TextField fx:id="playtimeField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+    <!-- Format Row -->
+    <Label text="Format:" GridPane.rowIndex="7" GridPane.columnIndex="2"/>
+    <TextField fx:id="formatField" GridPane.rowIndex="7" GridPane.columnIndex="3"
+               promptText="Digital, Physical, etc."/>
+
+    <!-- Language Row -->
+    <Label text="Language:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <TextField fx:id="languageField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+    <!-- Rating Row -->
+    <Label text="Rating:" GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+    <TextField fx:id="ratingField" GridPane.rowIndex="8" GridPane.columnIndex="3"
+               promptText="1-10"/>
+
+    <!-- Tags Row -->
+    <Label text="Tags:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+    <TextField fx:id="tagsField" GridPane.rowIndex="9" GridPane.columnIndex="1" 
+               GridPane.hgrow="ALWAYS" GridPane.columnSpan="3"
+               promptText="Fantasy, Sci-Fi, Multiplayer, etc. (comma separated)"/>
+
+    <!-- Cover Image Row -->
+    <Label text="Cover Image:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+    <VBox spacing="5" GridPane.rowIndex="10" GridPane.columnIndex="1" 
+          GridPane.columnSpan="3" GridPane.hgrow="ALWAYS">
+        <HBox spacing="5" HBox.hgrow="ALWAYS">
+            <TextField fx:id="coverImagePathField" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="browseButton" text="Browse"/>
+        </HBox>
+        <Label text="Or drag and drop an image file here:" style="-fx-font-style: italic;"/>
+        <Pane fx:id="dropZone" style="-fx-border-color: #cccccc; -fx-border-style: dashed; -fx-border-width: 2px; -fx-min-height: 100px;" 
+              VBox.vgrow="ALWAYS" />
+    </VBox>
+
+    <!-- Buttons Row -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.rowIndex="11" 
+          GridPane.columnIndex="0" GridPane.columnSpan="4">
+        <Button fx:id="saveButton" text="Save" defaultButton="true"/>
+        <Button fx:id="cancelButton" text="Cancel"/>
+    </HBox>
+</GridPane>

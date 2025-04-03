@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.gamecollection.controller.GameDetailsController"
+      spacing="10" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <!-- Cover Image (if available) -->
+    <ImageView fx:id="coverImageView" fitWidth="200" fitHeight="200" preserveRatio="true" 
+               VBox.vgrow="NEVER" style="-fx-border-color: #cccccc; -fx-border-width: 1px;"/>
+    
+    <!-- Title -->
+    <Label fx:id="titleLabel" style="-fx-font-weight: bold;" textAlignment="CENTER">
+        <font>
+            <Font size="16" />
+        </font>
+    </Label>
+    
+    <!-- Basic Information -->
+    <GridPane hgap="10" vgap="5">
+        <Label text="Developer:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="developerLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        
+        <Label text="Publisher:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="publisherLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        
+        <Label text="Release Year:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="releaseYearLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        
+        <Label text="Rating:" style="-fx-font-weight: bold;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="ratingLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        
+        <Label text="Format:" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Label fx:id="formatLabel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        
+        <Label text="Language:" style="-fx-font-weight: bold;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Label fx:id="languageLabel" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        
+        <Label text="Playtime:" style="-fx-font-weight: bold;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <Label fx:id="playtimeLabel" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+        
+        <Label text="Steam ID:" style="-fx-font-weight: bold;" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <Label fx:id="steamIdLabel" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    </GridPane>
+    
+    <!-- Lists Section -->
+    <TitledPane text="Genres" collapsible="false">
+        <ListView fx:id="genresListView" VBox.vgrow="NEVER" maxHeight="100"/>
+    </TitledPane>
+    
+    <TitledPane text="Platforms" collapsible="false">
+        <ListView fx:id="platformsListView" VBox.vgrow="NEVER" maxHeight="100"/>
+    </TitledPane>
+    
+    <TitledPane text="Tags" collapsible="false">
+        <ListView fx:id="tagsListView" VBox.vgrow="NEVER" maxHeight="100"/>
+    </TitledPane>
+    
+    <TitledPane text="Translators" collapsible="false">
+        <ListView fx:id="translatorsListView" VBox.vgrow="NEVER" maxHeight="100"/>
+    </TitledPane>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Edit" fx:id="editButton" onAction="#handleEditGame"/>
+        <Button text="Delete" fx:id="deleteButton" onAction="#handleDeleteGame"/>
+    </HBox>
+</VBox>

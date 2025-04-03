@@ -1,16 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import org.kordamp.bootstrapfx.scene.layout.Panel?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.gamecollection.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.gamecollection.HelloController"
+            onKeyPressed="#handleKeyPressed">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="Import..." onAction="#handleImport" accelerator="Ctrl+O">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-file-import" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                    <MenuItem text="Export..." onAction="#handleExport" accelerator="Ctrl+S">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-file-export" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit" onAction="#handleExit">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-sign-out-alt" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                </Menu>
+                <Menu text="Edit">
+                    <MenuItem text="Add Game..." onAction="#handleAddGame" accelerator="Ctrl+N">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-plus-circle" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                    <MenuItem text="Edit Selected Game..." onAction="#handleEditSelected">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-edit" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                    <MenuItem text="Delete Selected Game..." onAction="#handleDeleteSelected" accelerator="Delete">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-trash-alt" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                </Menu>
+                <Menu text="View">
+                    <Menu text="Sort By">
+                        <MenuItem text="Title" onAction="#handleSortByTitle"/>
+                        <MenuItem text="Developer" onAction="#handleSortByDeveloper"/>
+                        <MenuItem text="Publisher" onAction="#handleSortByPublisher"/>
+                        <MenuItem text="Release Year" onAction="#handleSortByReleaseYear"/>
+                        <MenuItem text="Rating" onAction="#handleSortByRating"/>
+                    </Menu>
+                </Menu>
+                <Menu text="Help">
+                    <MenuItem text="Help Contents" onAction="#handleHelpContents" accelerator="Ctrl+H">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-question-circle" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="About" onAction="#handleAbout">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-info-circle" iconSize="14" />
+                        </graphic>
+                    </MenuItem>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <Button fx:id="importButton" text="Import" onAction="#handleImport" styleClass="btn,btn-primary">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-file-import" />
+                    </graphic>
+                </Button>
+                <Button fx:id="exportButton" text="Export" onAction="#handleExport" styleClass="btn,btn-success">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-file-export" />
+                    </graphic>
+                </Button>
+                <Separator orientation="VERTICAL"/>
+                <Button text="Add Game" onAction="#handleAddGame" styleClass="btn,btn-info">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-plus-circle" />
+                    </graphic>
+                </Button>
+                <Separator orientation="VERTICAL"/>
+                <Label text="Sort:"/>
+                <ComboBox fx:id="sortComboBox" promptText="Sort by..."/>
+                <Separator orientation="VERTICAL"/>
+                <Label text="Search:"/>
+                <TextField fx:id="searchField" promptText="Enter search term..." prefWidth="200"/>
+                <Button text="Search" onAction="#handleSearch" styleClass="btn,btn-secondary">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-search" />
+                    </graphic>
+                </Button>
+                <Separator orientation="VERTICAL"/>
+                <Label text="Filter:"/>
+                <ComboBox fx:id="filterCategoryComboBox" promptText="Filter by..."/>
+            </ToolBar>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.6" VBox.vgrow="ALWAYS">
+            <!-- Left side: Game Table -->
+            <TableView fx:id="gameTableView">
+                <columns>
+                    <TableColumn fx:id="titleColumn" text="Title"/>
+                    <TableColumn fx:id="developerColumn" text="Developer"/>
+                    <TableColumn fx:id="publisherColumn" text="Publisher"/>
+                    <TableColumn fx:id="releaseYearColumn" text="Release Year"/>
+                    <TableColumn fx:id="platformsColumn" text="Platforms"/>
+                    <TableColumn fx:id="ratingColumn" text="Rating"/>
+                </columns>
+                <placeholder>
+                    <Label text="No games in the collection. Import a game collection or add games."/>
+                </placeholder>
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem text="Add Game" onAction="#handleAddGame"/>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </TableView>
+            
+            <!-- Right side: Game Details -->
+            <ScrollPane fx:id="detailsScrollPane" fitToWidth="true">
+                <!-- The game-details.fxml will be loaded here dynamically -->
+            </ScrollPane>
+        </SplitPane>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" styleClass="panel-footer">
+            <padding>
+                <Insets top="5" right="10" bottom="5" left="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="5" HBox.hgrow="ALWAYS">
+                <Label fx:id="welcomeText" text="Welcome to Game Collection!"/>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Label fx:id="statusLabel" text="Status: Ready"/>
+                <Separator orientation="VERTICAL"/>
+                <Label fx:id="gameCountLabel" text="Total Games: 0"/>
+                <Separator orientation="VERTICAL"/>
+                <HBox alignment="CENTER" spacing="5">
+                    <FontIcon iconLiteral="fas-database"/>
+                    <Label fx:id="databaseLabel" text="Local Database"/>
+                </HBox>
+            </HBox>
+        </HBox>
+    </bottom>
+</BorderPane>
